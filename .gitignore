@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env files
+.env
+.env.local
+.env.*.local
+*/.env   # subfolders ke andar bhi ignore hoga
+
+# Editor folders/files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+.terraform/
+.next/
+out/
+
+# Coverage
+coverage/
+*.lcov
+
+# Misc
+*.log
+
