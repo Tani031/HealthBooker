@@ -9,7 +9,7 @@ import ManageConsultations from "./pages/ManageConsultations";
 import DoctorDashboard from "./pages/DoctorDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import PatientDashboard from "./pages/PatientDashboard";
-import ProtectedRoute from "./components/ProtectedRoute"; 
+import ProtectedRoute from "./components/ProtectedRoute";
 import HomePage from "./pages/HomePage"; // ✅ ADD THIS IMPORT
 
 export default function App() {
@@ -20,8 +20,7 @@ export default function App() {
         <div className="flex-grow">
           <Routes>
             {/* ✅ Home Page */}
-            <Route path="/" element={<HomePage />} />   {/* 👈 use HomePage */}
-
+            <Route path="/" element={<HomePage />} /> {/* 👈 use HomePage */}
             {/* ✅ Feature Pages */}
             <Route path="/find-doctors" element={<FindDoctors />} />
             <Route
@@ -40,7 +39,6 @@ export default function App() {
                 </ProtectedRoute>
               }
             />
-
             {/* ✅ Patient Dashboard */}
             <Route
               path="/patient-dashboard"
@@ -50,7 +48,6 @@ export default function App() {
                 </ProtectedRoute>
               }
             />
-
             {/* ✅ Dashboards */}
             <Route
               path="/doctor-dashboard"
@@ -68,7 +65,6 @@ export default function App() {
                 </ProtectedRoute>
               }
             />
-
             {/* ✅ Other Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

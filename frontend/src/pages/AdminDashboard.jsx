@@ -14,9 +14,12 @@ export default function AdminDashboard() {
   const fetchDoctors = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:5000/api/admin/doctors", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const { data } = await axios.get(
+        "http://localhost:5000/api/admin/doctors",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setDoctors(data);
     } catch (err) {
       setMessage("❌ Failed to fetch doctors.");
@@ -29,9 +32,12 @@ export default function AdminDashboard() {
   const fetchPatients = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:5000/api/admin/patients", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const { data } = await axios.get(
+        "http://localhost:5000/api/admin/patients",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setPatients(data);
     } catch (err) {
       setMessage("❌ Failed to fetch patients.");
@@ -44,9 +50,12 @@ export default function AdminDashboard() {
   const fetchAppointments = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:5000/api/admin/appointments", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const { data } = await axios.get(
+        "http://localhost:5000/api/admin/appointments",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setAppointments(data);
     } catch (err) {
       setMessage("❌ Failed to fetch appointments.");
@@ -64,7 +73,9 @@ export default function AdminDashboard() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMessage("✅ Doctor approved successfully!");
-      setDoctors((prev) => prev.map((doc) => (doc._id === id ? data.doctor : doc)));
+      setDoctors((prev) =>
+        prev.map((doc) => (doc._id === id ? data.doctor : doc))
+      );
     } catch {
       setMessage("❌ Failed to approve doctor.");
     }
@@ -146,9 +157,15 @@ export default function AdminDashboard() {
                 className="border p-4 rounded-lg flex justify-between items-center shadow-sm"
               >
                 <div>
-                  <p><strong>Name:</strong> {doc.name}</p>
-                  <p><strong>Email:</strong> {doc.email}</p>
-                  <p><strong>Specialization:</strong> {doc.specialization}</p>
+                  <p>
+                    <strong>Name:</strong> {doc.name}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {doc.email}
+                  </p>
+                  <p>
+                    <strong>Specialization:</strong> {doc.specialization}
+                  </p>
                   <p>
                     <strong>Status:</strong>{" "}
                     <span
@@ -196,9 +213,15 @@ export default function AdminDashboard() {
                 className="border p-4 rounded-lg flex justify-between items-center shadow-sm"
               >
                 <div>
-                  <p><strong>Name:</strong> {p.name}</p>
-                  <p><strong>Email:</strong> {p.email}</p>
-                  <p><strong>Age:</strong> {p.age}</p>
+                  <p>
+                    <strong>Name:</strong> {p.name}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {p.email}
+                  </p>
+                  <p>
+                    <strong>Age:</strong> {p.age}
+                  </p>
                 </div>
                 <button
                   onClick={() => deletePatient(p._id)}
@@ -257,4 +280,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-
